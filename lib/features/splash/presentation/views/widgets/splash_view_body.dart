@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -5,6 +6,10 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column();
+    // return Column(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //   children: [Image.asset(AssetsData.logo)],
+    // );
+    return Center(child: Image.asset(AssetsData.logo));
   }
 }
