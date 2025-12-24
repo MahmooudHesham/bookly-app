@@ -21,7 +21,11 @@ class SlidingText extends StatelessWidget {
             child: const Text(
               'Read Freely',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12, letterSpacing: 5),
+              style: TextStyle(
+                fontSize: 12,
+                letterSpacing: 5,
+                fontFamily: 'BBH Bartle',
+              ),
             ),
           );
         },
