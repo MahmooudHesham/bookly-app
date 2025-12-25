@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/bood_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewitem extends StatelessWidget {
@@ -24,31 +25,37 @@ class BestSellerListViewitem extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: Text(
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  "Dead FLowers",
-                  style: Styles.textStyle20.copyWith(
-                    fontFamily: kPlayfairDisplay,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Text(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    "Dead FLowers",
+                    style: Styles.textStyle20.copyWith(
+                      fontFamily: kPlayfairDisplay,
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              const Text("J.M. Petrick", style: Styles.textStyle14),
+                const Text("J.M. Petrick", style: Styles.textStyle14),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              const Row(
-                children: [Text("19.99 \$", style: Styles.textStyle20)],
-              ),
-            ],
+                const Row(
+                  children: [
+                    Text("19.99 \$", style: Styles.textStyle20),
+                    Spacer(flex: 1),
+                    BookRating(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
