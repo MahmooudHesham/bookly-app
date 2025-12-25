@@ -3,3 +3,4 @@ import 'package:flutter/material.dart';
 //const kPrimaryColor = Color(0xff100B20);
 const kPrimaryColor = Colors.black;
 const kTransitionDuration = Duration(milliseconds: 250);
+const kPlayfairDisplay = 'Playfair Display';
