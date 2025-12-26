@@ -40,7 +40,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     child: Text(
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      "Dead FLowers",
+                      "Dead Flowers",
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kPlayfairDisplay,
                       ),
