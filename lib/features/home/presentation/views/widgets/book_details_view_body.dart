@@ -15,8 +15,22 @@ class BookDetailsViewBody extends StatelessWidget {
         children: [
           const SafeArea(child: CustomBookDetailAppBar()),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.15),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.18),
             child: const CustomBookImage(),
+          ),
+          const SizedBox(height: 43),
+          Text(
+            'Dead FLowers',
+            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w900),
+          ),
+          const SizedBox(height: 6),
+
+          Text(
+            'J.M. Petrick',
+            style: Styles.textStyle18.copyWith(
+              fontStyle: FontStyle.italic,
+              color: Colors.white.withAlpha(179),
+            ),
           ),
         ],
       ),

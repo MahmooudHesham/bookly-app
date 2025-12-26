@@ -9,7 +9,7 @@ abstract class Styles {
 
   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.w600,
+    fontVariations: [FontVariation('wght', 600)],
     fontFamily: kPlayfairDisplay,
   );
 
@@ -17,6 +17,11 @@ abstract class Styles {
 
   static const textStyle16 = TextStyle(
     fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const textStyle18 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w500,
   );
 }
