@@ -24,7 +24,9 @@ class BestSellerListView extends StatelessWidget {
             },
           );
         } else if (state is NewestBooksFialure) {
-          return CustomErrorWidget(errMsg: state.errMsg);
+          return SliverToBoxAdapter(
+            child: CustomErrorWidget(errMsg: state.errMsg),
+          );
         } else {
           return SliverList.builder(
             itemCount: 5,
