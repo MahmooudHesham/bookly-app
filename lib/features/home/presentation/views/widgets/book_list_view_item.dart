@@ -1,13 +1,15 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/bood_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,18 +20,19 @@ class BookListViewItem extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 3.2 / 5,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/images/test_book_cover_1.jpg'),
-                  ),
-                ),
-              ),
-            ),
+            CustomBookImage(imgUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            // AspectRatio(
+            //   aspectRatio: 3.2 / 5,
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(8),
+            //       image: const DecorationImage(
+            //         fit: BoxFit.fill,
+            //         image: AssetImage('assets/images/test_book_cover_1.jpg'),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -40,7 +43,7 @@ class BookListViewItem extends StatelessWidget {
                     child: Text(
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      "Dead Flowers",
+                      bookModel.volumeInfo.title!,
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kPlayfairDisplay,
                       ),
@@ -49,13 +52,20 @@ class BookListViewItem extends StatelessWidget {
 
                   const SizedBox(height: 3),
 
-                  const Text("J.M. Petrick", style: Styles.textStyle14),
+                  Text(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    bookModel.volumeInfo.authors?.isNotEmpty == true
+                        ? bookModel.volumeInfo.authors![0]
+                        : 'Unknown Auther',
+                    style: Styles.textStyle14,
+                  ),
 
                   const SizedBox(height: 3),
 
                   const Row(
                     children: [
-                      Text("19.99 €", style: Styles.textStyle20),
+                      Text("Free", style: Styles.textStyle20),
                       Spacer(flex: 1),
                       BookRating(),
                     ],
