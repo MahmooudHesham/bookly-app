@@ -1,7 +1,7 @@
+import 'package:bookly/core/utils/functions/custom_launch_url.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BooksDetailsButtons extends StatelessWidget {
   const BooksDetailsButtons({super.key, required this.bookModel});
@@ -26,10 +26,7 @@ class BooksDetailsButtons extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () async {
-                Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri);
-                }
+                customLaunchUrl(context, bookModel.volumeInfo.previewLink!);
               },
               text: 'Free Preview',
               fontSize: 16,
