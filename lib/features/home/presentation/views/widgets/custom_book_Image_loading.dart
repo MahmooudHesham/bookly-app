@@ -7,7 +7,7 @@ class CustomBookImageLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3 / 5,
+      aspectRatio: 3.1 / 5,
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300]!, // لون الخلفية
         highlightColor: Colors.grey[100]!, // لون اللمعة
