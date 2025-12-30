@@ -20,7 +20,11 @@ class BookListViewItem extends StatelessWidget {
         height: 130,
         child: Row(
           children: [
-            CustomBookImage(imgUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+              imgUrl:
+                  bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  'https://blog-cdn.reedsy.com/directories/gallery/285/large_7dd6a2cc216d856056547f26ea3d3b78.jpg',
+            ),
             // AspectRatio(
             //   aspectRatio: 3.2 / 5,
             //   child: Container(

@@ -22,7 +22,9 @@ class FeaturedBooksListView extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: CustomBookImage(
-                    imgUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imgUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                        'https://blog-cdn.reedsy.com/directories/gallery/285/large_7dd6a2cc216d856056547f26ea3d3b78.jpg',
                   ),
                 );
               },
