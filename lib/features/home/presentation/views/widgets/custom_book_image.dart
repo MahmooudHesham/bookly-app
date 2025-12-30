@@ -13,7 +13,7 @@ class CustomBookImage extends StatelessWidget {
         borderRadius: BorderRadiusGeometry.circular(16),
         child: CachedNetworkImage(
           fit: BoxFit.fill,
-          imageUrl: imgUrl,
+          imageUrl: imgUrl.replaceFirst('http', 'https'),
           placeholder: (context, url) => const CustomBookImageLoading(),
           errorWidget: (context, url, error) =>
               const Icon(Icons.error, color: Colors.red, size: 30),
