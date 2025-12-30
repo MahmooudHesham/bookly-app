@@ -61,7 +61,7 @@ class BookListViewItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     bookModel.volumeInfo.authors?.isNotEmpty == true
                         ? bookModel.volumeInfo.authors![0]
-                        : 'Unknown Auther',
+                        : 'Unknown Author',
                     style: Styles.textStyle14,
                   ),
 
